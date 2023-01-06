@@ -86,3 +86,17 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+
+/* the total number of months included in the dataset. print to the console
+*/
+
+console.log(finances.length);
+
+/* the net total amount of profit/losses over the entire period 
+*/
+
+/* the average of the (changes) in profit/losses over the entire period. Track what the
+total change in profit is from month to month and then find the average(Total/Number of months)
+*/
+
+/* 
