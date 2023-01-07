@@ -93,10 +93,17 @@ var finances = [
 console.log(finances.length);
 
 /* the net total amount of profit/losses over the entire period 
-*/
-
+*/ var netprofit = 0
+for (var i = 0; i < finances.length; i++) {
+console.log (finances [i][1] + finances [i++][1])
+console.log (netprofit)
+}
 /* the average of the (changes) in profit/losses over the entire period. Track what the
 total change in profit is from month to month and then find the average(Total/Number of months)
 */
 
-/* 
+/* the greatest increase in profits (date and amount) over the entire period
+*/
+
+/* the greatestdecrease in losses (date and amount) over the entire period
+*/
