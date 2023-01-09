@@ -91,17 +91,28 @@ var finances = [
 */
 
 console.log(finances.length);
+console.log("Total months:", finances.length);
 
 /* the net total amount of profit/losses over the entire period 
-*/ var netprofit = 0
+*/ 
+var netprofit = 0
+var newTotal = 0
+var Averagechanges =0
 for (var i = 0; i < finances.length; i++) {
-console.log (finances [i][1] + finances [i++][1])
-console.log (netprofit)
+console.log ( finances[i]);
+newTotal =newTotal+finances[i] [1];
+
 }
+console.log(newTotal)
+console.log("Total:", "$", newTotal);
 /* the average of the (changes) in profit/losses over the entire period. Track what the
 total change in profit is from month to month and then find the average(Total/Number of months)
 */
 
+Averagechanges= newTotal/finances.length
+{
+console.log("Average change:","$", newTotal/finances.length);
+}
 /* the greatest increase in profits (date and amount) over the entire period
 */
 
