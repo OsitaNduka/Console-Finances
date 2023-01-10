@@ -120,6 +120,8 @@ console.log ( "Average Change: $"+ (totalDifferences/finances.length).toFixed(2)
 
 /* the greatest increase in profits (date and amount) over the entire period
 */
+/* the greatest decrease in losses (date and amount) over the entire period
+*/
 var maxProfit = ["", 0];
 var maxLoss = ["", 0];
 for (var i = 1; i < finances.length; i++) {
@@ -135,5 +137,3 @@ maxLoss = [finances[i][0], currentIncrease];
 console.log("Greatest increase in profits: " + maxProfit);
 console.log("Greatest decrease in profits: " + maxLoss);
 
-/* the greatest decrease in losses (date and amount) over the entire period
-*/
