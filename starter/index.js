@@ -90,7 +90,7 @@ var finances = [
 /* the total number of months included in the dataset. print to the console
 */
 
-console.log(finances.length);
+// console.log(finances.length);
 console.log("Total months:", finances.length);
 
 /* the net total amount of profit/losses over the entire period 
@@ -98,23 +98,42 @@ console.log("Total months:", finances.length);
 var netprofit = 0
 var newTotal = 0
 var Averagechanges =0
+var totalDifferences =0
 for (var i = 0; i < finances.length; i++) {
-console.log ( finances[i]);
+// console.log ( finances[i]);
 newTotal =newTotal+finances[i] [1];
 
 }
-console.log(newTotal)
-console.log("Total:", "$", newTotal);
+// console.log(newTotal)
+console.log("Total: $"+newTotal);
 /* the average of the (changes) in profit/losses over the entire period. Track what the
 total change in profit is from month to month and then find the average(Total/Number of months)
 */
-
-Averagechanges= newTotal/finances.length
-{
-console.log("Average change:","$", newTotal/finances.length);
+// Averagechanges= newTotal/finances.length
+ 
+for (var i =0; i<finances.length-1; i++) {
+totalDifferences=totalDifferences + Math.abs(finances [i][1]-finances[i+1][1])
+var Averagechanges= (totalDifferences/finances.length).toFixed(2);
 }
+console.log ( "Average Change: $"+ (totalDifferences/finances.length).toFixed(2));
+
+
 /* the greatest increase in profits (date and amount) over the entire period
 */
+var maxProfit = ["", 0];
+var maxLoss = ["", 0];
+for (var i = 1; i < finances.length; i++) {
+var currentProfit = finances [i][1];
+var priorProfit = finances[i-1][1];
+var currentIncrease = currentProfit - priorProfit;
+if (currentIncrease > maxProfit[1]) {
+maxProfit = [finances[i][0], currentIncrease];
+} else if (currentIncrease < maxLoss[1]) {
+maxLoss = [finances[i][0], currentIncrease];
+}
+}
+console.log("Greatest increase in profits: " + maxProfit);
+console.log("Greatest decrease in profits: " + maxLoss);
 
-/* the greatestdecrease in losses (date and amount) over the entire period
+/* the greatest decrease in losses (date and amount) over the entire period
 */
